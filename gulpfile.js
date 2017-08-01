@@ -6,11 +6,17 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     browserSync = require('browser-sync').create();
 
+function handleError(err) {
+    console.log(err.toString()); // eslint-disable-line no-console
+    this.emit('end');
+}
+
 gulp.task('less', function () {
     return gulp.src([
         './resources/less/injp.less'
     ])
     .pipe(less())
+    .on('error', handleError)
     .pipe(gulp.dest('./resources/css'));
 });
 

@@ -1,6 +1,6 @@
 @import "../../vendors/bootstrap-3.3.7/less/bootstrap.less";
 
-@import "theme2.less";
+@import "theme3.less";
 
 .jumbotron {
 	position:relative;
@@ -14,8 +14,9 @@
 	/*background:#000 url('../img/background1.jpg') no-repeat fixed center top;
 	background-position: -344px top;*/
 
-	background:#000 url('../img/dawn-nature-sunset-trees.jpg') no-repeat fixed center bottom;
-	background-size: 100%;
+	// background:#000 url('../img/dawn-nature-sunset-trees.jpg') no-repeat fixed center -360px;
+	background:#000 url('../img/dawn-nature-sunset-trees-1920x360.jpg') no-repeat fixed center top;
+	// background-size: 100%;
 	// background-position: 0 -350px;
 
 	/*background:#000 url('../assets/flowers-summer-bokeh.jpg') no-repeat fixed center top;
@@ -54,85 +55,141 @@
 	background-position: 0 -300px;*/
 
 	color:#fff;
+
+    .logo {
+        position: absolute;
+        top: 100px;
+        font-family: 'Raleway', sans-serif;
+        /*text-shadow: #fff 0px 1px 1px;*/
+
+        /*text-shadow: 0 0 1px #fff;*/
+        /*-webkit-text-stroke: 0.3px;*/
+    }
+
+    p {
+        position: absolute;
+        bottom: 22px;
+        right: 112px;
+        text-align: right;
+        font-family: 'Raleway', sans-serif;
+        font-size: 22px;
+        // text-shadow: 1px 2px 1px #000;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+        color: #fff;
+    }
+    /*.navbar {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .navbar-form {
+    line-height:normal;
+    }
+    */
+    .navbar-inverse {
+        // background-color: #001B1F;
+
+        // background-color: rgba(91, 81, 79, 0.7); // Add tranparency to default theme color
+        border-color: transparent;
+        margin-bottom: 0;
+
+        .navbar-nav {
+            > li > a {
+                // color: #D9EDF7;
+                padding: 20px;
+            }
+
+            > .open > a {
+                &, &:hover, &:focus {
+                    /*background-color: #004B57;*/
+                    // background-color: #001517;
+                }
+            }
+        }
+
+
+        .dropdown-menu {
+            // background-color: #001517;
+            a {
+                // color: #fff;
+            }
+        }
+    }
+
+
+    .welcome {
+        background-image: url("../img/DSCN7658.JPG");
+        background-position: -1200px -600px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size:29px;
+    }
+
+    a {
+        display: inline-block;
+    }
+
+    .mb-40 {
+        margin-bottom: 40px;
+    }
+
+    #map {
+        height: 400px;
+    }
 }
 
-.jumbotron .logo {
-	margin-top: 40px;
-	// margin-left: 45px;
-	font-family: 'Raleway', sans-serif;
-	/*text-shadow: #fff 0px 1px 1px;*/
 
-	/*text-shadow: 0 0 1px #fff;*/
-    /*-webkit-text-stroke: 0.3px;*/
-}
 
-.jumbotron p {
-    margin-top: 200px;
-    margin-right: 50px;
-    font-family: 'Raleway', sans-serif;
-	font-size: 22px;
-	// text-shadow: 1px 2px 1px #000;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
-	color: #fff;
-}
+ @media (max-width: @screen-xs-max) {
+    .jumbotron {
 
-/*.jumbotron .navbar {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	margin-bottom: 0;
-}
+        .logo {
+            left: calc(~'50% - 118px');
+            text-align: center;
+            top: 40px;
+        }
 
-.jumbotron .navbar-form {
-	line-height:normal;
-}
-*/
-.navbar-inverse {
-	// background-color: #001B1F;
+        p {
+            margin: 0;
+            width: calc(~'100% - 50px');
+            right: 25px;
+            text-align: center;
+            font-size: 18px;
+        }
 
-	background-color: rgba(91, 81, 79, 0.7); // Add tranparency to default theme color
-	border-color: transparent;
-	margin-bottom: 0;
-}
+        .navbar-inverse {
+            background-color: transparent;
 
-.navbar-inverse .navbar-nav > li > a {
-	// color: #D9EDF7;
-	padding: 20px;
-}
+            .navbar-header {
+                .navbar-toggle {
+                    padding: 15px 10px;
 
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
-	/*background-color: #004B57;*/
-	// background-color: #001517;
-}
+                    &:focus, &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
 
-.navbar-inverse .dropdown-menu a {
-	// color: #fff;
-}
+            .navbar-collapse {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+                background-color: @navbar-inverse-bg;
 
-.navbar-inverse .dropdown-menu {
-	// background-color: #001517;
-}
+                .navbar-nav {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
 
-.welcome {
-	background-image: url("../img/DSCN7658.JPG");
-	background-position: -1200px -600px;
-	height: 200px;
-}
-
-h2 {
-	font-size:29px;
-}
-
-a {
-	display: inline-block;
-}
-
-.mb-40 {
-	margin-bottom: 40px;
-}
-
-#map {
-	height: 400px;
-}
+            .navbar-toggle {
+                border-style: none;
+            }
+        }
+    }
+ }
