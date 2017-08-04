@@ -2,6 +2,10 @@
 
 @import "theme3.less";
 
+body {
+    font-weight: @headings-font-weight;
+}
+
 .jumbotron {
 	position:relative;
 	height: 360px;
@@ -9,6 +13,7 @@
 	padding-left:0;
 	padding-right:0;
 	padding-bottom:0px;
+    margin-bottom: 0;
 	/*padding-bottom:98px;*/
 	/*padding: 50px 0;*/
 	/*background:#000 url('../img/background1.jpg') no-repeat fixed center top;
@@ -56,10 +61,16 @@
 
 	color:#fff;
 
+    > .container {
+        height: 300px;
+        position: relative;
+    }
+
     .logo {
         position: absolute;
-        top: 100px;
-        font-family: 'Raleway', sans-serif;
+        top: 40px;
+        left: 15px;
+        // font-family: 'Raleway', sans-serif;
         /*text-shadow: #fff 0px 1px 1px;*/
 
         /*text-shadow: 0 0 1px #fff;*/
@@ -69,7 +80,7 @@
     p {
         position: absolute;
         bottom: 22px;
-        right: 112px;
+        right: 15px;
         text-align: right;
         font-family: 'Raleway', sans-serif;
         font-size: 22px;
@@ -88,17 +99,18 @@
     line-height:normal;
     }
     */
-    .navbar-inverse {
+    .navbar {
         // background-color: #001B1F;
 
         // background-color: rgba(91, 81, 79, 0.7); // Add tranparency to default theme color
         border-color: transparent;
         margin-bottom: 0;
+        border-width: 0;
 
         .navbar-nav {
             > li > a {
                 // color: #D9EDF7;
-                padding: 20px;
+                padding: 16px;
             }
 
             > .open > a {
@@ -150,7 +162,7 @@
         .logo {
             left: calc(~'50% - 118px');
             text-align: center;
-            top: 40px;
+            top: -20px;
         }
 
         p {
@@ -161,7 +173,7 @@
             font-size: 18px;
         }
 
-        .navbar-inverse {
+        .navbar {
             background-color: transparent;
 
             .navbar-header {
@@ -179,7 +191,9 @@
                 top: 0;
                 width: 100%;
                 z-index: -1;
-                background-color: @navbar-inverse-bg;
+                background-color: @navbar-default-bg;
+                height: 360px;
+                overflow: auto;
 
                 .navbar-nav {
                     margin-top: 0;
